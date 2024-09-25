@@ -1,0 +1,9 @@
+<div class="card-content">
+  <h1 class="card-title">{{ title }}</h1>
+  <p>{{ introduction }}</p>
+  @for(theory of theories; track theory.title) {
+  <li class="theories">
+    <strong>{{ theory.title }} :</strong> {{ theory.content }}
+  </li>
+  }
+</div>

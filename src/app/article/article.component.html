@@ -1,9 +1,17 @@
 <div class="card-content">
-  <h1 class="card-title">{{ title }}</h1>
-  <p>{{ introduction }}</p>
-  @for(theory of theories; track theory.title) {
-  <li class="theories">
-    <strong>{{ theory.title }} :</strong> {{ theory.content }}
-  </li>
-  }
+  <!-- contenu de l'article masqué si contenu dépublié -->
+  <div [hidden]="!article.isPublished">
+    <h1 class="card-title">{{ article.title }}</h1>
+    <h2>{{ article.author }}</h2>
+
+    <p>{{ article.content }}</p>
+    <img [src]="article.image" [alt]="article.title" />
+
+    <p>commentaire : {{ comment }}</p>
+    <input type="text" [(ngModel)]="comment" />
+  </div>
+  <!-- bouton de publication / dépublication -->
+  <button (click)="togglePublication()">
+    {{ article.isPublished ? "Dépublier" : "Publier" }}
+  </button>
 </div>

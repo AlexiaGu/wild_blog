@@ -1,6 +1,7 @@
-// import { Component } from '@angular/core';
+// import { Component, inject } from '@angular/core';
 // import { FormsModule } from '@angular/forms';
-// import { Article } from './article.model';
+
+// import { ActivatedRoute, ParamMap } from '@angular/router';
 
 // @Component({
 //   selector: 'app-article',
@@ -10,6 +11,7 @@
 //   styleUrl: './article.component.scss',
 // })
 // export class ArticleComponent {
+
 //   // pour récuperer le typage provenant du fichier article.models.ts
 //   article: Article = {
 //     title: "Titre de l'article",
@@ -25,4 +27,4 @@
 //   togglePublication(): void {
 //     this.article.isPublished = !this.article.isPublished;
 //   }
-// }
+//}

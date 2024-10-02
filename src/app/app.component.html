@@ -7,4 +7,12 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <h1>Bienvenue sur le Wild Blog d'{{ title }}</h1>
+<nav class="link">
+  <a [routerLink]="['']">Accueil</a>
+
+  <a [routerLink]="['/signupform']">Formulaire </a>
+</nav>
+
+<router-outlet />
+
 <router-outlet />

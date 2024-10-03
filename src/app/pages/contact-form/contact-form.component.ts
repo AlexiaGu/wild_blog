@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Message } from '../models/message.models';
+import { Message } from '../../models/message.models';
 
 @Component({
   selector: 'app-contact-form',

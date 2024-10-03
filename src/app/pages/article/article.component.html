@@ -13,6 +13,7 @@
     <p>commentaire : {{ article.comment }}</p>
     <input type="text" [(ngModel)]="article.comment" />
   </div>
+  <button (click)="sendNotification(article)">liker</button>
 
   <button (click)="togglePublication(article)">
     {{ article.isPublished ? "Dépublier" : "Publier" }}

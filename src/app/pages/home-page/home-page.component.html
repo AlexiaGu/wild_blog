@@ -1,0 +1,17 @@
+<main class="main">
+  <!-- <p>Message reçu de l'enfant : {{ messageFromChild }}</p> -->
+  <p>{{ messageFromChild }}</p>
+
+  <ul>
+    @for (article of articles; track $index){ @if (article.isPublished) {
+
+    <app-article
+      [articles]="articles"
+      (notifyParent)="handleNotification($event)"
+    />
+    } } @empty {
+    <p>Aucun article publié pour le moment</p>
+
+    }
+  </ul>
+</main>

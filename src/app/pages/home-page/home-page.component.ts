@@ -1,9 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { Article } from '../models/article.model';
+
+// Pages
 import { ContactFormComponent } from '../contact-form/contact-form.component';
 import { ArticleComponent } from '../article/article.component';
+
+// Models
+import { Article } from '../../models/article.model';
 
 @Component({
   selector: 'app-home-page',
@@ -20,6 +24,7 @@ import { ArticleComponent } from '../article/article.component';
 })
 export class HomePageComponent {
   // messageToChild: string = 'Bonjour depuis le parent !';
+  messageFromChild: string = '';
   articles: Article[] = [
     {
       id: 1,
@@ -52,6 +57,12 @@ export class HomePageComponent {
       likes: 200,
     },
   ];
+
+  handleNotification(message: string) {
+    this.messageFromChild = message;
+    //console.log(message);
+  }
+
   togglePublish(article: any): void {
     article.isPublished = !article.isPublished;
   }

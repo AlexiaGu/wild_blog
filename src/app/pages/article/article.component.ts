@@ -1,6 +1,6 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Article } from '../models/article.model';
+import { Article } from '../../models/article.model';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -13,6 +13,12 @@ import { RouterModule } from '@angular/router';
 })
 export class ArticleComponent {
   @Input() articles: Article[] = [];
+
+  @Output() notifyParent: EventEmitter<string> = new EventEmitter<string>();
+
+  sendNotification(article: Article) {
+    this.notifyParent.emit(`L'article "${article.title}" vient d'être liké`);
+  }
 
   togglePublication(article: Article): void {
     article.isPublished = !article.isPublished;

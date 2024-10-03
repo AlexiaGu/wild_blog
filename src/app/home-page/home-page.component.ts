@@ -3,15 +3,23 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { Article } from '../models/article.model';
 import { ContactFormComponent } from '../contact-form/contact-form.component';
+import { ArticleComponent } from '../article/article.component';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, RouterLink, ContactFormComponent],
+  imports: [
+    RouterOutlet,
+    CommonModule,
+    RouterLink,
+    ContactFormComponent,
+    ArticleComponent,
+  ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
 })
 export class HomePageComponent {
+  // messageToChild: string = 'Bonjour depuis le parent !';
   articles: Article[] = [
     {
       id: 1,

@@ -1,16 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink, Router } from '@angular/router';
-// import { ArticleComponent } from './article/article.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, CommonModule, RouterLink],
   templateUrl: './app.component.html',
-  //  template: '<h1>"hello you"</h1>',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title: string = 'Alexia';
+  title = "Bienvenue sur le Wild Blog d'Alexia !";
 }

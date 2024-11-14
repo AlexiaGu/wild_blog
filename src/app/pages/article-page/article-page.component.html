@@ -1,1 +1,5 @@
 <p>L'article porte l'id numéro : {{ articleId }}</p>
+<div *ngIf="article$ | async as article">
+  <h2>{{ article.title }}</h2>
+  <p>{{ article.content }}</p>
+</div>

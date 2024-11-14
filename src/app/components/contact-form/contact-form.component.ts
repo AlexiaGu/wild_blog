@@ -16,7 +16,9 @@ export class ContactFormComponent {
     email: '',
     content: '',
   };
-  onSubmit(): void {
-    console.log('Formulaire envoyé !');
+
+  onSubmit() {
+    console.log(`Formulaire envoyé!`);
+    console.log(this.newMessage);
   }
 }

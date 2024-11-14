@@ -3,7 +3,8 @@ import { ArticleThumbnailComponent } from '../article-thumbnail/article-thumbnai
 import { Article } from '../../models/article.model';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-article-list',
@@ -13,17 +14,13 @@ import { Subscription } from 'rxjs';
   styleUrl: './article-list.component.scss',
 })
 export class ArticleListComponent {
-  private http = inject(HttpClient);
-  public articles: Article[] = [];
-  articleListSubscription!: Subscription;
+  private apiService = inject(ApiService);
+  articles$!: Observable<Article[]>;
+
   public messageFromChild = '';
 
   ngOnInit(): void {
-    this.getArticles();
-  }
-
-  ngOnDestroy(): void {
-    this.articleListSubscription.unsubscribe();
+    this.articles$ = this.apiService.getArticles();
   }
 
   dataRecieveFromChild(message: string): void {
@@ -34,14 +31,5 @@ export class ArticleListComponent {
   togglePublication(article: Article): void {
     article.isPublished = !article.isPublished;
     console.log(article.isPublished);
-  }
-
-  getArticles() {
-    this.articleListSubscription = this.http
-      .get<Article[]>('http://localhost:3000/articles')
-      .subscribe((data) => {
-        this.articles = data;
-        console.log('Données reçus', data, this.articles);
-      });
   }
 }

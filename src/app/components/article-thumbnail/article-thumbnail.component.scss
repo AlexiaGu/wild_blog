@@ -1,6 +1,5 @@
 .container {
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 30px;
   padding: 20px;
@@ -10,14 +9,10 @@
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-
-  max-width: 400px; /* Limite la largeur des cartes */
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  position: relative; /* Pour permettre des éléments flottants */
 }
 
 .card:hover {
@@ -76,11 +71,6 @@
   transition: border-color 0.3s ease;
 }
 
-.comment_input_block input:focus {
-  border-color: #007bff;
-  outline: none;
-}
-
 .comment_input_block button {
   padding: 10px 15px;
   background-color: #a74428;
@@ -93,7 +83,7 @@
 }
 
 .comment_input_block button:hover {
-  background-color: #218838;
+  background-color: #da7320;
 }
 
 /* Message de non publication */
@@ -113,21 +103,16 @@
   text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* Form styling */
 form {
   display: flex;
   gap: 20px;
 }
 
-/* Responsiveness */
+/* Responsive */
 @media (max-width: 768px) {
   .card {
     width: 90%;
     margin: 0 auto;
-  }
-
-  .container {
-    gap: 20px;
   }
 
   .text_block h2 {

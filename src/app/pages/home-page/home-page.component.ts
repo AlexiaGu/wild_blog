@@ -27,7 +27,7 @@ export class HomePageComponent {
   }
 
   getArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>('http://localhost:3000/articles');
+    return this.http.get<Article[]>('http://localhost:8080/articles');
   }
 
   goToArticlePage(articleId: number) {

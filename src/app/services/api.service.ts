@@ -7,7 +7,7 @@ import { Article } from '../models/article.model';
   providedIn: 'root',
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:3000/articles';
+  private apiUrl = 'http://localhost:8080/articles';
   private http = inject(HttpClient);
   constructor() {}
 

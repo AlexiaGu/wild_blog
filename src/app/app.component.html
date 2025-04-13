@@ -1,8 +1,17 @@
 <h1>{{ title }}</h1>
 <nav class="link">
   <a [routerLink]="['']">Accueil</a>
-  <a [routerLink]="['/article/:id']">Article</a>
-  <a [routerLink]="['/signupform']">Formulaire </a>
+  <a [routerLink]="['contactform']">Contact</a>
+
+  @if(!isLogged) {
+  <a [routerLink]="['/signupform']">Sign-up</a>
+  <a [routerLink]="['/login']">Login</a>
+  } @if(isLogged) {
+  <a href="#" (click)="logout()">Logout</a>
+  <a [routerLink]="['/profile']">Profile</a>
+  @if(isAdmin) {
+  <a [routerLink]="['/admin']">Admin</a>
+  } }
 </nav>
 
 <router-outlet />
